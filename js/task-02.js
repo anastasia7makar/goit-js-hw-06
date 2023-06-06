@@ -1,17 +1,12 @@
-const ingredients = [
-  "Potatoes",
-  "Mushrooms",
-  "Garlic",
-  "Tomatos",
-  "Herbs",
-  "Condiments",
-];
+const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
 
-const ingredientsEl = document.querySelector("#ingredients");
+const ingredientsEl = document.querySelector('#ingredients');
 
-const elements = ingredients.forEach((ingradient) => {
-  const newEl = document.createElement("li");
+const elements = ingredients.map(ingradient => {
+  const newEl = document.createElement('li');
   newEl.innerText = ingradient;
-  newEl.classList.add("item");
-  ingredientsEl.append(newEl);
+  newEl.classList.add('item');
+  return newEl;
 });
+
+ingredientsEl.append(...elements);
